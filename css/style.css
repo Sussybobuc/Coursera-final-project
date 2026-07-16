@@ -1,0 +1,105 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #dedede;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 32px;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+}
+
+p {
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+}
+
+/* Mobile view (default): one column grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding: 10px;
+}
+
+figure {
+  margin: 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  text-align: center;
+  overflow: hidden;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+figcaption {
+  font-family: Arial, sans-serif;
+  padding-top: 8px;
+}
+
+/* Tablet view */
+@media (min-width: 772px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  figure {
+    border-radius: 50%;
+  }
+
+  figure:last-child {
+    grid-column: span 2;
+  }
+}
+
+/* Large screen view */
+@media (min-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  figure {
+    border-radius: 0;
+  }
+
+  figure:nth-child(3n) {
+    grid-column: span 2;
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Dark color scheme */
+@media (prefers-color-scheme: dark) {
+  figure {
+    background-color: #1e1e1e;
+    color: #f4d35e;
+    border-color: #000;
+  }
+}
